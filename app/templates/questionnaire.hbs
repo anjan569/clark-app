@@ -1,0 +1,15 @@
+   <Header />
+   <div class="que-container" >
+      <div class="actionBar">
+        <LinkTo @route="index" class="button finishBtn" {{action 'finish' @model}}>Finish</LinkTo>
+      </div>
+      {{#each  @model as |question|}}
+        <Question @question={{question}} />
+      {{/each}}
+      <div class="actionBar">
+        <LinkTo @route="index" class="button finishBtn" {{action 'finish' @model}}>Finish</LinkTo>
+      </div>
+       
+    {{!-- </BsCarousel> --}}
+    
+   </div>

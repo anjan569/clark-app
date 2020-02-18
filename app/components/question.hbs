@@ -1,0 +1,19 @@
+<div ...attributes class="container-fluid">
+    <div>
+        <h2>{{@question.headline}}</h2>
+        {{#if (eq @question.question_type "multiple-choice")}}
+            {{#each @question.choices as |option|}}
+                <div class="optionsBlock">
+                    {{input type="checkbox" click=(action 'toggleOption'  @question)  checked=option.selected  }} {{option.label}}
+                </div>
+            {{/each}}
+        {{else }}
+            {{#if (eq @question.multiline "true")}}
+                {{textarea value=@question.description cols="100"  
+                }}
+            {{else}}
+                {{input value=@question.description }}
+            {{/if}}
+        {{/if}} 
+    </div>
+</div>
